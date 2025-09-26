@@ -1,0 +1,47 @@
+{
+  "name": "MarketPrice",
+  "type": "object",
+  "properties": {
+    "commodity": {
+      "type": "string",
+      "description": "Name of the commodity"
+    },
+    "market_name": {
+      "type": "string",
+      "description": "Name of the market"
+    },
+    "price_per_kg": {
+      "type": "number",
+      "description": "Price per kilogram in rupees"
+    },
+    "price_change": {
+      "type": "number",
+      "description": "Price change from yesterday (positive for increase, negative for decrease)"
+    },
+    "quality_grade": {
+      "type": "string",
+      "enum": [
+        "A",
+        "B",
+        "C"
+      ],
+      "description": "Quality grade of the commodity"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the price"
+    },
+    "location": {
+      "type": "string",
+      "description": "Location/district of the market"
+    }
+  },
+  "required": [
+    "commodity",
+    "market_name",
+    "price_per_kg",
+    "date",
+    "location"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "name": "WeatherAlert",
+  "type": "object",
+  "properties": {
+    "location": {
+      "type": "string",
+      "description": "Location for the weather alert"
+    },
+    "alert_type": {
+      "type": "string",
+      "enum": [
+        "heavy_rain",
+        "flood",
+        "drought",
+        "hailstorm",
+        "cyclone",
+        "extreme_heat"
+      ],
+      "description": "Type of weather alert"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "extreme"
+      ],
+      "description": "Severity level of the alert"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the weather alert"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When the weather event is expected to start"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When the weather event is expected to end"
+    },
+    "advice": {
+      "type": "string",
+      "description": "Advice for farmers regarding this weather event"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether the alert is currently active"
+    }
+  },
+  "required": [
+    "location",
+    "alert_type",
+    "severity",
+    "description",
+    "start_date"
+  ]
+}

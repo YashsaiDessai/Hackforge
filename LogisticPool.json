@@ -1,0 +1,83 @@
+{
+  "name": "LogisticsPool",
+  "type": "object",
+  "properties": {
+    "organizer_id": {
+      "type": "string",
+      "description": "ID of the farmer organizing the pool"
+    },
+    "departure_location": {
+      "type": "string",
+      "description": "Starting location"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Destination location"
+    },
+    "departure_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Planned departure date"
+    },
+    "available_space_tons": {
+      "type": "number",
+      "description": "Available space in tons"
+    },
+    "cost_per_ton": {
+      "type": "number",
+      "description": "Cost per ton for transport"
+    },
+    "vehicle_type": {
+      "type": "string",
+      "enum": [
+        "truck",
+        "tractor_trolley",
+        "pickup",
+        "mini_truck"
+      ],
+      "description": "Type of vehicle"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "full",
+        "completed",
+        "cancelled"
+      ],
+      "default": "open",
+      "description": "Status of the logistics pool"
+    },
+    "participants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "farmer_id": {
+            "type": "string"
+          },
+          "quantity_tons": {
+            "type": "number"
+          },
+          "commodity": {
+            "type": "string"
+          }
+        }
+      },
+      "default": [],
+      "description": "List of participating farmers"
+    },
+    "contact_phone": {
+      "type": "string",
+      "description": "Organizer's contact phone"
+    }
+  },
+  "required": [
+    "organizer_id",
+    "departure_location",
+    "destination",
+    "departure_date",
+    "available_space_tons",
+    "cost_per_ton"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "name": "BuyerListing",
+  "type": "object",
+  "properties": {
+    "buyer_id": {
+      "type": "string",
+      "description": "ID of the buyer user"
+    },
+    "company_name": {
+      "type": "string",
+      "description": "Name of buyer's company"
+    },
+    "commodities_buying": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of commodities the buyer is interested in"
+    },
+    "location": {
+      "type": "string",
+      "description": "Buyer's location"
+    },
+    "contact_phone": {
+      "type": "string",
+      "description": "Buyer's contact phone"
+    },
+    "min_quantity_tons": {
+      "type": "number",
+      "description": "Minimum quantity required in tons"
+    },
+    "max_price_per_kg": {
+      "type": "number",
+      "description": "Maximum price willing to pay per kg"
+    },
+    "requirements": {
+      "type": "string",
+      "description": "Special requirements or notes"
+    },
+    "is_verified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether buyer is verified"
+    },
+    "rating": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5,
+      "default": 5,
+      "description": "Buyer's rating"
+    }
+  },
+  "required": [
+    "buyer_id",
+    "company_name",
+    "commodities_buying",
+    "location",
+    "contact_phone"
+  ]
+}
